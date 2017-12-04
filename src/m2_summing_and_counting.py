@@ -7,10 +7,10 @@ A subsequent module lets you practice the ACCUMULATOR pattern in another classic
    IN GRAPHICS:   x = x + pixels
 
 Authors: David Mutchler, Dave Fisher, Valerie Galluzzi, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Tyler Nottingham.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
-
+import math
 # ----------------------------------------------------------------------
 # Students: As you work each of these problems, ask yourself:
 #   1. Do I need a loop?
@@ -67,6 +67,9 @@ def run_test_sum_more_cosines():
     # Below this comment, add 2 more test cases of your own choosing.
     # ------------------------------------------------------------------
 
+    #Test 2:
+    expected2 =
+    answer2 = sum_more_cosines(3, 6)
 
 def sum_more_cosines(m, n):
     """
