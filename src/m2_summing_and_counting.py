@@ -108,9 +108,9 @@ def sum_more_cosines(m, n):
     # ------------------------------------------------------------------
     total = 0
 
-    for k in range(n + 1):
-        if k >= m:
-            total = total + math.cos(k)
+    for k in range(n + 1 - m):
+        i = k + m
+        total = total + math.cos(i)
 
     return total
 
@@ -118,7 +118,7 @@ def sum_more_cosines(m, n):
 def run_test_count_sines_from():
     """ Tests the   count_sines_from   function. """
     # ------------------------------------------------------------------
-    # TODO: 4. Implement this TEST function.
+    # DONE: 4. Implement this TEST function.
     #   It TESTS the  count_sines_from  function defined below.
     #   Include at least **   6   ** tests (we wrote one for you).
     #              ** Yes, 6 (six) tests. **
@@ -191,7 +191,7 @@ def count_sines_from(m, n):
       -- count_sines_from(9, 9)  returns  1
     """
     # ------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # DONE: 5. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     #
     # IMPORTANT: As in previous problems in this session,
@@ -199,15 +199,17 @@ def count_sines_from(m, n):
     #   of the RANGE expression, if you happen to know them.
     # ------------------------------------------------------------------
     total = 0
-    for k in range(n + 1):
-        if k >= m:
-            if math.sin(k) < 0.5:
+    for k in range(n + 1 - m):
+        i = k + m
+        if math.sin(i) < 0.5:
                 total = total + 1
     return total
+
+
 def run_test_count_sines_vs_cosines():
     """ Tests the   count_sines_vs_cosines   function. """
     # ------------------------------------------------------------------
-    # TODO: 6. Implement this TEST function.
+    # DONE: 6. Implement this TEST function.
     #   It TESTS the  count_sines_vs_cosines  function defined below.
     #   Include at least **   6   ** tests (we wrote one for you).
     #              ** Yes, 6 (six) tests. **
@@ -225,10 +227,40 @@ def run_test_count_sines_vs_cosines():
     print('Test 1 expected:', expected)
     print('       actual:  ', answer)
 
+
     # ------------------------------------------------------------------
     # TO DO: 6 (continued).
     # Below this comment, add 5 more test cases of your own choosing.
     # ------------------------------------------------------------------
+    # Test 2:
+    expected2 = 2
+    answer2 = count_sines_vs_cosines(2)
+    print('Test 2 Expected:', expected2)
+    print('Actual:', answer2)
+
+    # Test 3:
+    expected3 = 5
+    answer3 = count_sines_vs_cosines(4)
+    print('Test 3 Expected:', expected3)
+    print('Actual:', answer3)
+
+    # Test 4:
+    expected4 = 6
+    answer4 = count_sines_vs_cosines(6)
+    print('Test 4 Expected:', expected4)
+    print('Actual:', answer4)
+
+    # Test 5:
+    expected5 = 7
+    answer5 = count_sines_vs_cosines(8)
+    print('Test 5 Expected:', expected5)
+    print('Actual:', answer5)
+
+    # Test 6:
+    expected6 = 11
+    answer6 = count_sines_vs_cosines(10)
+    print('Test 6 Expected:', expected6)
+    print('Actual:', answer6)
 
 
 def count_sines_vs_cosines(m):
@@ -256,13 +288,20 @@ def count_sines_vs_cosines(m):
       -- Also:  count_sines_vs_cosines(101) returns 100 (trust me!)
     """
     # ------------------------------------------------------------------
-    # TODO: 7. Implement and test this function.
+    # DONE: 7. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     #
     # IMPORTANT: As in previous problems in this session,
     #   you must NOT use the 2 or 3-parameter versions
     #   of the RANGE expression, if you happen to know them.
     # ------------------------------------------------------------------
+    count = 0
+    for k in range((m * 2) + 1):
+        i = (-m) + k
+        if math.sin(i) > math.cos(i):
+            count = count + 1
+    return count
+
 
 
 # ----------------------------------------------------------------------
